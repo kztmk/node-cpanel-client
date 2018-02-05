@@ -1,6 +1,6 @@
 {
   "name": "cpanel-client",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Node Cpanel client",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/phamviet/node-cpanel-client#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "debug": "^3.1.0",
     "node-fetch": "^1.7.3"
   }
 }

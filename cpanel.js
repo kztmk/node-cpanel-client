@@ -1,6 +1,7 @@
 const qs = require('querystring')
 const fetch = require('node-fetch')
 const debug = require('debug')('cpanel')
+const merge = require('util')._extend;
 
 function dibug(module, func, query = {}) {
     debug(`CALLING: ${module}::${func}`)
@@ -39,6 +40,11 @@ Client.prototype.api2 = function(module, func, query = {}) {
         headers: this.headers
       })
       .then(res => res.json())
+}
+
+Client.prototype.use = function(proto) {
+  merge(this, proto)
+  return this
 }
 
 Client.createClient = function ({ endpoint, username, password }) {
